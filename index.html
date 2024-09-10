@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Romantis</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e, #fecfef, #feada6); /* Latar belakang romantis */
+            font-family: 'Arial', sans-serif;
+        }
+
+        .slide {
+            font-size: 36px;
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .active {
+            opacity: 1;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff1493;
+            transform: scale(1.05);
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Halaman Utama -->
+    <div class="slide active" id="slide1">
+        Mewakili suara yang tak pernah mampu ku ucapkan 💖
+        <br><br>
+        <button class="btn" onclick="nextSlide(1)">Buka untuk ke halaman berikutnya</button>
+    </div>
+
+    <!-- Halaman 1 -->
+    <div class="slide hidden" id="slide2">
+        Dari awal mungkin terlalu maksa kamu supaya kita punya hubungan jadian dan sampai saat ini gak bisa memahami kamu Put 💌
+        <br><br>
+        <button class="btn" onclick="nextSlide(2)">Buka untuk ke halaman berikutnya</button>
+    </div>
+
+    <!-- Halaman 2 -->
+    <div class="slide hidden" id="slide3">
+        Memang kenyataan seperti itu, tapi ada harapan kita punya hubungan yang lebih ❤️
+        <br><br>
+        <button class="btn" onclick="nextSlide(3)">Ke halaman berikutnya</button>
+    </div>
+
+    <!-- Halaman 3 -->
+    <div class="slide hidden" id="slide4">
+        Tapi saya sadar sayang, cinta ini gak pernah akan buat kamu bahagia 💔
+        <br><br>
+        <button class="btn" onclick="nextSlide(4)">Ke halaman berikutnya</button>
+    </div>
+
+    <!-- Halaman 4 -->
+    <div class="slide hidden" id="slide5">
+        Di saat orang lain melihat saya hanya anak biasa saja, tapi ada harapan kamu bisa menjadi orang yang spesial berharga dan bisa membimbing menjadi dewasa🌟
+        <br><br>
+        <button class="btn" onclick="nextSlide(5)">Ke halaman terakhir</button>
+    </div>
+
+    <!-- Halaman 5 (Terakhir) -->
+    <div class="slide hidden" id="slide6">
+        Sooo!!! I want an answer from you, Putri 😍💬<br>It doesn't have to be today.<br>Soo how long will I wait! But don't take too long because everyone has a limit to wait ⏳<br>Let us get to know each other as time goes by ❤️
+        <br><br>
+        <button class="btn" onclick="nextSlide(6)">Tolong dijawab ya, Put</button>
+    </div>
+
+    <!-- Halaman Akhir -->
+    <div class="slide hidden" id="slide7">
+        Terima kasih sudah membaca sampai akhir 😊🌹 Saya tunggu jawabanmu, Putri.<br><br>
+        <button class="btn" onclick="alert('Jawaban ini untukmu, Putri.')">Sampai Jumpa :)</button>
+    </div>
+
+    <script>
+        function nextSlide(currentSlide) {
+            // Menyembunyikan halaman yang saat ini aktif
+            document.getElementById('slide' + currentSlide).classList.remove('active');
+            document.getElementById('slide' + currentSlide).classList.add('hidden');
+
+            // Menampilkan halaman berikutnya
+            const nextSlide = currentSlide + 1;
+            if (document.getElementById('slide' + nextSlide)) {
+                document.getElementById('slide' + nextSlide).classList.remove('hidden');
+                document.getElementById('slide' + nextSlide).classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>
